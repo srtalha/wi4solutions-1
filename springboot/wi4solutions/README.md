@@ -61,7 +61,7 @@ Asterisk Install
 #cp /var/www/projects/wi4solutions/springboot/wi4solutions/asterisk/*conf /etc/asterisk
 #cp /var/www/projects/wi4solutions/springboot/wi4solutions/asterisk/odbc.ini /etc/.
 #cp /var/www/projects/wi4solutions/springboot/wi4solutions/asterisk/odbcinst.ini /etc/.
-#cp /var/www/projects/wi4solutions/springboot/wi4solutions/libmyodbc* /usr/lib/x86_64-linux-gnu/odbc/.
+#cp /var/www/projects/wi4solutions/springboot/wi4solutions/libs/libmyodbc* /usr/lib/x86_64-linux-gnu/odbc/.
 ```
 Change config files base on custom server ip and database settings if it is necesary.
 Validate odbc connection
