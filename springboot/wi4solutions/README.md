@@ -61,6 +61,9 @@ Asterisk Install
 #make menuselect
 #make install
 #make samples
+#apt-get install asterisk
+#/etc/init.d/asterisk start
+#systemctl enable asterisk
 #cp /var/www/projects/wi4solutions/springboot/wi4solutions/asterisk/*conf /etc/asterisk
 #cp /var/www/projects/wi4solutions/springboot/wi4solutions/asterisk/odbc.ini /etc/.
 #cp /var/www/projects/wi4solutions/springboot/wi4solutions/asterisk/odbcinst.ini /etc/.
