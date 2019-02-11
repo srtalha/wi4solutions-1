@@ -22,6 +22,8 @@ Mariadb Install
 ```
 apt install  default-mysql-server/kali-rolling
 apt install default-mysql-client/kali-rolling
+#Start mysql
+# /etc/init.d/mysql start
 mysql_secure_installation
 ```
 
@@ -29,6 +31,7 @@ Clone project source code
 
 ```
 #apt install git
+#apt-get install apache2
 #mkdir /var/www/projects
 #mkdir -p /var/www/projects
 #cd /var/www/projects
