@@ -22,9 +22,10 @@ Mariadb Install
 ```
 apt install  default-mysql-server/kali-rolling
 apt install default-mysql-client/kali-rolling
-#Start mysql
+----Start mysql-----
 # /etc/init.d/mysql start
 mysql_secure_installation
+root password should be:v413nt1n4
 ```
 
 Clone project source code
@@ -68,6 +69,7 @@ Asterisk Install
 #cp /var/www/projects/wi4solutions/springboot/wi4solutions/asterisk/odbc.ini /etc/.
 #cp /var/www/projects/wi4solutions/springboot/wi4solutions/asterisk/odbcinst.ini /etc/.
 #cp /var/www/projects/wi4solutions/springboot/wi4solutions/libs/libmyodbc* /usr/lib/x86_64-linux-gnu/odbc/.
+#apt install unixodbc uniodbc-dev unixodbc-bin
 ```
 Change config files base on custom server ip and database settings if it is necesary.
 Validate odbc connection
@@ -154,9 +156,9 @@ Log into mariadb
 
 ```
 #mysql -u root -h localhost -p
-#password XXXX
+#password v413nt1n4
 mariadb> create database wi4solutions;
-mariadb> GRANT ALL PRIVILEGES ON .* to 'wi4solutions'@'localhost' IDENTIFIED BY 'w14s0l_1';
+mariadb> GRANT ALL PRIVILEGES ON .* to 'wi4solutions' IDENTIFIED BY 'w14s0l_1';
 mariadb> FLUSH PRIVILEGES;
 ```
 
@@ -171,10 +173,13 @@ Compile and package project with maven and install as service
 #cd /var/www/projects/wi4solutions/springboot/wi4solutions
 #mvn  -Dmaven.test.skip=true -Dspring.profiles.active=prod,webpack,no-liquibase package
 #ln -s /var/www/projects/wi4solutions/springboot/wi4solutions/target/wi-4-solutions-0.0.1-SNAPSHOT.war wi4solutions
+# mv /var/www/projects/wi4solutions/springboot/wi4solutions/command
 # cd /var/www/projects/wi4solutions/springboot/wi4solutions/service
 #cp  wi4solutions.service  /etc/systemd/system/wi4solutions.service
+#vim /etc/systemd/system/wi4solutions.service
+----change the user to root---- & Save
 #systemctl enable wi4solutions.service
-#service start wi4solutions
+#service wi4solutions start
 
 ```
 
