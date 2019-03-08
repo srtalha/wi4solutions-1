@@ -69,33 +69,9 @@ Asterisk Install
 #cp /var/www/projects/wi4solutions/springboot/wi4solutions/asterisk/odbc.ini /etc/.
 #cp /var/www/projects/wi4solutions/springboot/wi4solutions/asterisk/odbcinst.ini /etc/.
 #cp /var/www/projects/wi4solutions/springboot/wi4solutions/libs/libmyodbc* /usr/lib/x86_64-linux-gnu/odbc/.
-#apt install unixodbc uniodbc-dev unixodbc-bin
-```
-Change config files base on custom server ip and database settings if it is necesary.
-Validate odbc connection
-
-```
-echo "select 1" | isql -v asterisk-connector
+#apt install unixodbc unixodbc-dev unixodbc-bin
 ```
 
-Out will be something like:
-```
-+---------------------------------------+
-| Connected!                            |
-|                                       |
-| sql-statement                         |
-| help [tablename]                      |
-| quit                                  |
-|                                       |
-+---------------------------------------+
-SQL> select 1
-+---------------------+
-| 1                   |
-+---------------------+
-| 1                   |
-+---------------------+
-SQLRowCount returns 1
-1 rows fetched
 ```
 Install g729 and  g2723 asterisk code:
 
@@ -161,7 +137,31 @@ mariadb> create database wi4solutions;
 mariadb> GRANT ALL PRIVILEGES ON .* to 'wi4solutions' IDENTIFIED BY 'w14s0l_1';
 mariadb> FLUSH PRIVILEGES;
 ```
+Change config files base on custom server ip and database settings if it is necesary.
+Validate odbc connection
 
+```
+echo "select 1" | isql -v asterisk-connector
+```
+
+Out will be something like:
+```
++---------------------------------------+
+| Connected!                            |
+|                                       |
+| sql-statement                         |
+| help [tablename]                      |
+| quit                                  |
+|                                       |
++---------------------------------------+
+SQL> select 1
++---------------------+
+| 1                   |
++---------------------+
+| 1                   |
++---------------------+
+SQLRowCount returns 1
+1 rows fetched
 Import database wi4solutions
 
 ```
